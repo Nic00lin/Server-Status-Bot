@@ -62,7 +62,6 @@ def generate_commands_markup():
     markup.row('Перезапустить бота')
     return markup
 
-
 @bot.message_handler(func=lambda message: message.text == "Перезапустить бота")
 def handle_start(message):
     user_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -127,7 +126,6 @@ def get_available_memory_command(message):
     bot.reply_to(message, f"Доступная память: \n{output}")
     bot.send_message(chat_id, "Выберите действие:", reply_markup=generate_actions_markup())
 
-bot.polling()
 
 @bot.message_handler(commands=['info'])
 def get_system_info_command(message):
